@@ -10,8 +10,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
 // API Endpoint for Image Upload
-app.post('/upload', upload.single('image'), (req, res) => {
-    console.log('start')
+app.post('/process', upload.single('image'), (req, res) => {
   if (!req.file) {
     return res.status(400).json({ error: 'No file uploaded' });
   }
